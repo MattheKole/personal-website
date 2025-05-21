@@ -32,38 +32,29 @@
     </svg>
   </a>
 
-  <!-- Email icon with tooltip -->
-  <div class="relative group cursor-pointer">
-    <!-- Email Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 hover:text-red-400 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4 4m0 0l-4-4m4 4V8" />
+ <!-- Email Icon -->
+<div class="inline-block mx-4 relative group">
+  <a href="mailto:your.email@gmail.com" class="text-white hover:text-gray-300">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 
+               2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+               4l-8 5-8-5V6l8 5 8-5v2z" />
     </svg>
-    <!-- Tooltip bubble -->
-    <div class="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 bg-gray-800 text-sm text-white px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none">
-      matthew.kolesnik@gmail.com
-    </div>
+  </a>
+  <!-- Tooltip -->
+  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-700 text-white text-sm px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition">
+    matthew.kolesnik@gmail.com
   </div>
+</div>
 </footer>
 
-<!-- Resume Section -->
-<section id="resume" class="mt-20 text-white">
-  <div class="max-w-md mx-auto bg-gray-800 rounded-xl shadow-lg p-6 text-center">
-    <h2 class="text-2xl font-bold mb-2">View My Resume</h2>
-    <p class="text-gray-300 mb-4">Want to learn more about my experience, skills, and education?</p>
-    
-    <!-- Resume Icon -->
-    <div class="flex justify-center mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0l-6-6m6 6l6-6M4 20h16" />
-      </svg>
-    </div>
-    
-    <!-- Resume Button -->
-    <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition">
-      View Resume
-    </a>
-  </div>
-</section>
+<!-- Resume Button -->
+<footer class="mt-20 text-center pb-10">
+  <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full transition">
+    View Resume
+  </a>
+</footer>
+
 
   <script src="script.js"></script>
 </body>
