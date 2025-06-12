@@ -23,7 +23,19 @@
     font-family: 'Playfair Display', serif;
   }
 </style>
+<style>
+  .blinking-cursor {
+    font-weight: bold;
+    color: #22c55e; /* Tailwind's green-500 */
+    animation: blink 1s step-end infinite;
+  }
 
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+</style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
@@ -48,9 +60,14 @@
   <main class="pt-24 px-6 max-w-4xl mx-auto space-y-32">
 
 <!-- My name -->
-    <section class="text-center mt-20">
-  <h1 class="text-5xl font-extrabold tracking-wide mb-4">Matthew Kolesnik</h1>
+<!-- Animated Intro -->
+<section class="text-center mt-32">
+  <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide mb-4">
+    <span id="greeting" class="text-green-400"></span><span class="blinking-cursor">|</span> I'm Matthew.
+  </h1>
 </section>
+
+
 
     <!-- About Section -->
     <section id="about" class="border border-gray-500 rounded-lg p-6">
@@ -154,6 +171,34 @@
     </section>
 
   </main>
+
+  <script>
+  const greetings = ["Hey", "Hi", "Bonjour", "Hola", "Ciao", "こんにちは", "안녕하세요", "👋"];
+  let current = 0;
+  const el = document.getElementById("greeting");
+
+  function typeGreeting(text, i = 0) {
+    if (i < text.length) {
+      el.textContent = text.substring(0, i + 1);
+      setTimeout(() => typeGreeting(text, i + 1), 120);
+    } else {
+      // Pause before erasing
+      setTimeout(() => eraseGreeting(text), 1500);
+    }
+  }
+
+  function eraseGreeting(text, i = text.length) {
+    if (i > 0) {
+      el.textContent = text.substring(0, i - 1);
+      setTimeout(() => eraseGreeting(text, i - 1), 60);
+    } else {
+      current = (current + 1) % greetings.length;
+      setTimeout(() => typeGreeting(greetings[current]), 600);
+    }
+  }
+
+  typeGreeting(greetings[current]);
+</script>
 
 </body>
 </html>
