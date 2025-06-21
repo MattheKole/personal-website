@@ -9,196 +9,190 @@
   <style>
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: 100px;
     }
-    .sidebar {
-      top: 30%;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d0d0d;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .blinking-cursor {
+      font-weight: bold;
+      color: #22c55e;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .hero-bg {
+      background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.07) 0%, transparent 60%),
+                        radial-gradient(circle at 30% 30%, rgba(34, 197, 94, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   </style>
-  <style>
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
-  h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-  }
-</style>
-<style>
-  .blinking-cursor {
-    font-weight: bold;
-    color: #22c55e; /* Tailwind's green-500 */
-    animation: blink 1s step-end infinite;
-  }
-
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-</style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white">
 
   <!-- Sticky Header -->
-  <header class="fixed top-0 left-0 w-full bg-gray-900 border-b border-gray-700 z-50 px-6 py-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Matthew Kolesnik</h1>
-    <a href="resume.pdf" target="_blank" class="text-sm bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full transition">
+  <header class="fixed top-0 left-0 w-full bg-[#0d0d0d] z-50 px-6 py-4 flex justify-between items-center border-b border-gray-800">
+    <h1 class="text-xl font-bold tracking-wider">Matthew Kolesnik</h1>
+    <nav class="hidden md:flex space-x-6 text-sm">
+      <a href="#about" class="hover:text-green-400">About</a>
+      <a href="#education" class="hover:text-green-400">Education</a>
+      <a href="#experience" class="hover:text-green-400">Experience</a>
+      <a href="#projects" class="hover:text-green-400">Projects</a>
+      <a href="#contact" class="hover:text-green-400">Contact</a>
+    </nav>
+    <a href="resume.pdf" target="_blank" class="text-sm bg-white text-black px-4 py-2 rounded-full hover:bg-gray-100 transition">
       View Resume
     </a>
   </header>
 
- <!-- Sidebar Navigation -->
-<nav class="hidden md:flex flex-col fixed left-4 sidebar space-y-4 z-40">
-  <a href="#about" class="text-sm hover:text-green-400 transition">About</a>
-  <a href="#education" class="text-sm hover:text-green-400 transition">Education</a>
-  <a href="#experience" class="text-sm hover:text-green-400 transition">Experience</a>
-  <a href="#projects" class="text-sm hover:text-green-400 transition">Projects</a>
-  <a href="#contact" class="text-sm hover:text-green-400 transition">Contact</a>
-</nav>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6 hero-bg">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+        <span id="greeting" class="text-green-400"></span><span class="blinking-cursor">|</span><br />
+        I'm <span class="text-white">Matthew Kolesnik</span>
+      </h1>
+      <p class="text-gray-400 text-lg mt-4">
+        I design & build clean, interactive experiences for the web. Let’s make something cool together.
+      </p>
+    </div>
+  </section>
 
   <!-- Main Content -->
-  <main class="pt-24 px-6 max-w-4xl mx-auto space-y-32">
+  <main class="px-6 max-w-4xl mx-auto space-y-32 pt-10">
 
-<!-- My name -->
-<!-- Animated Intro -->
-<section class="text-center mt-32">
-  <h1 class="text-5xl md:text-6xl font-extrabold tracking-wide mb-4">
-    <span id="greeting" class="text-green-400"></span><span class="blinking-cursor">|</span> I'm Matthew.
-  </h1>
-</section>
-
-
-
-    <!-- About Section -->
-    <section id="about" class="border border-gray-500 rounded-lg p-6">
+    <!-- About -->
+    <section id="about" class="border border-gray-700 rounded-lg p-6">
       <h2 class="text-3xl font-bold mb-4">About Me</h2>
       <p class="text-gray-300 text-lg">
-        I love creating things that look cool. 
-        <br>
-        <br>
-        On a more technical note, I like to do stuff that impacts the community. My goal is to make people's lives easier and if I'm able to learn a lot new things along the way, then that's a nice little bonus.
-        <br>
-        <br>
-        And... "In case I don't see ya, good afternoon, good evening, and good night!" - Truman
+        I love creating things that look cool. <br><br>
+        On a more technical note, I like to do stuff that impacts the community. My goal is to make people's lives easier — and if I learn new things along the way, that's a nice bonus.
+        <br><br>
+        “In case I don't see ya — good afternoon, good evening, and good night!” – Truman
       </p>
     </section>
 
-    <!-- Education Section -->
-<section id="education" class="mt-20">
-  <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block pb-1">Education</h2>
-  <div class="space-y-6 text-gray-300">
-    <div>
-      <h3 class="text-xl font-semibold">McMaster University</h3>
-      <p class="text-sm text-gray-400">Present</p>
-      <p>Doing my Bachelor of Technology with a Business Minor</p>
-    </div>
-    <div>
-      <h3 class="text-xl font-semibold">Python for Data Science, AI, and Development</h3>
-      <p class="text-sm text-gray-400">April 2025</p>
-      <p>Took an online course from IBM that taught me a bunch of cool things like Pandas, NumPy, and Beautiful Soup.</p>
-    </div>
-  </div>
-</section>
+    <!-- Education -->
+    <section id="education">
+      <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block pb-1">Education</h2>
+      <div class="space-y-6 text-gray-300">
+        <div>
+          <h3 class="text-xl font-semibold">McMaster University</h3>
+          <p class="text-sm text-gray-400">Present</p>
+          <p>Computer Science degree with a Business Minor</p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold">IBM Python for Data Science, AI and Development</h3>
+          <p class="text-sm text-gray-400">April 2025</p>
+          <p>Online course: learned Pandas, NumPy, BeautifulSoup, and Python data tools.</p>
+        </div>
+      </div>
+    </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience">
       <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block pb-1">Experience</h2>
       <div class="space-y-6 text-gray-300">
         <div>
           <h3 class="text-xl font-semibold">Siemens Canada</h3>
           <p class="text-sm text-gray-400">August 2023</p>
-          <p>Helped donate some old company laptops to local charities.</p>
+          <p>Helped coordinate donation of retired laptops to local charities.</p>
         </div>
         <div>
           <h3 class="text-xl font-semibold">City of Toronto</h3>
-          <p class="text-sm text-gray-400">2023 - 2024</p>
-          <p>Just a part time Lifeguard/Swim Instructor (I like swimming).</p>
+          <p class="text-sm text-gray-400">2023 – 2024</p>
+          <p>Lifeguard / Swim Instructor — helped kids learn to swim safely (and had fun doing it).</p>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects">
-     <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block pb-1">Projects</h2>
+      <h2 class="text-3xl font-bold mb-4 border-b-2 border-green-500 inline-block pb-1">Projects</h2>
       <div class="space-y-6 text-gray-300">
         <div>
           <h3 class="text-xl font-semibold">This Website</h3>
-          <p>I used HTML, CSS, and JavaScript.</p>
+          <p>Built using HTML, Tailwind CSS, and JavaScript. Designed to evolve as I grow.</p>
         </div>
         <div>
           <h3 class="text-xl font-semibold">Course Management System</h3>
-          <p>Planning courses is hard so I made a project with some friends to help do that.</p>
+          <p>Planned and built a tool with friends to help manage university course planning.</p>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="text-center">
       <h2 class="text-3xl font-bold mb-6">Let's Connect</h2>
-      <p class="text-gray-300 mb-6">Feel free to reach out via email or connect on LinkedIn.</p>
-      <div class="flex justify-center space-x-6 text-white">
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/matthew-kolesnik-652213323/" target="_blank" class="hover:text-blue-400 transition">
+      <p class="text-gray-300 mb-6">Reach out via email or connect on LinkedIn/GitHub:</p>
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.linkedin.com/in/matthew-kolesnik-652213323/" target="_blank" class="hover:text-blue-400 transition" title="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.1c.5-.9 1.7-2.2 3.6-2.2 3.8 0 4.5 2.5 4.5 5.7V24h-4v-8.3c0-2-.04-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.5V24h-4V8z"/>
           </svg>
         </a>
-        <!-- Email -->
-        <a href="mailto:matthew.kolesnik@gmail.com" class="hover:text-red-500 transition" title="Matthew.kolesnik@gmail.com">
+        <a href="mailto:matthew.kolesnik@gmail.com" class="hover:text-red-500 transition" title="Email Me">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 
                      2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
                      4l-8 5-8-5V6l8 5 8-5v2z" />
           </svg>
         </a>
-        <!-- GitHub -->
-    <a href="https://github.com/MattheKole" target="_blank" class="hover:text-gray-400 transition" title="GitHub Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 
-                 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
-                 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
-                 -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.729.084-.729 
-                 1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997 
-                 .108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.93 
-                 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23a11.52 
-                 11.52 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 
-                 3.285-1.23 .645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 
-                 0 4.61-2.805 5.625-5.475 5.92.435.375.81 1.11.81 2.235 0 1.62-.015 
-                 2.925-.015 3.32 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/>
-      </svg>
-    </a>
+        <a href="https://github.com/MattheKole" target="_blank" class="hover:text-gray-400 transition" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 0C5.37 0 0 5.373 0 12c0 5.303 
+              3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
+              0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61 
+              -.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.084-.729.084-.729 
+              1.205.084 1.84 1.236 1.84 1.236 1.07 1.835 2.807 1.305 3.492.997 
+              .108-.776.418-1.305.762-1.605-2.665-.3-5.466-1.335-5.466-5.93 
+              0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 
+              0 0 1.005-.322 3.3 1.23a11.52 11.52 0 0 1 3-.405c1.02.005 
+              2.045.138 3 .405 2.28-1.552 3.285-1.23 
+              3.285-1.23 .645 1.653.24 2.873.12 3.176.765.84 
+              1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.435.375.81 
+              1.11.81 2.235 0 1.62-.015 2.925-.015 3.32 
+              0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
       </div>
     </section>
-
   </main>
 
+  <!-- Animated Greeting Script -->
   <script>
-  const greetings = ["Hey", "Hi", "Bonjour", "Hola", "Ciao", "こんにちは", "안녕하세요", "👋"];
-  let current = 0;
-  const el = document.getElementById("greeting");
+    const greetings = ["Hey", "Hi", "Bonjour", "Hola", "Ciao", "こんにちは", "안녕하세요", "👋"];
+    let current = 0;
+    const el = document.getElementById("greeting");
 
-  function typeGreeting(text, i = 0) {
-    if (i < text.length) {
-      el.textContent = text.substring(0, i + 1);
-      setTimeout(() => typeGreeting(text, i + 1), 120);
-    } else {
-      // Pause before erasing
-      setTimeout(() => eraseGreeting(text), 1500);
+    function typeGreeting(text, i = 0) {
+      if (i < text.length) {
+        el.textContent = text.substring(0, i + 1);
+        setTimeout(() => typeGreeting(text, i + 1), 120);
+      } else {
+        setTimeout(() => eraseGreeting(text), 1500);
+      }
     }
-  }
 
-  function eraseGreeting(text, i = text.length) {
-    if (i > 0) {
-      el.textContent = text.substring(0, i - 1);
-      setTimeout(() => eraseGreeting(text, i - 1), 60);
-    } else {
-      current = (current + 1) % greetings.length;
-      setTimeout(() => typeGreeting(greetings[current]), 600);
+    function eraseGreeting(text, i = text.length) {
+      if (i > 0) {
+        el.textContent = text.substring(0, i - 1);
+        setTimeout(() => eraseGreeting(text, i - 1), 60);
+      } else {
+        current = (current + 1) % greetings.length;
+        setTimeout(() => typeGreeting(greetings[current]), 600);
+      }
     }
-  }
 
-  typeGreeting(greetings[current]);
-</script>
+    typeGreeting(greetings[current]);
+  </script>
 
 </body>
 </html>
